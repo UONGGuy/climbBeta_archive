@@ -41,7 +41,7 @@ class ModelsTestCase(BaseTestCase):
         franchiser = Franchiser(name=eFranchiser.CITY_BOULDERING)
         gym = ClimbingGym(name="Test Climbing Gym with Boards", franchiser=franchiser)
         board1 = ClimbingBoard(board_type=eClimbBoard.KILTER_BOARD, is_adjustable=True, angle_of_incline=70.0)
-        board2 = ClimbingBoard(board_type=eClimbBoard.MOONBAORD, is_adjustable=False, angle_of_incline=50.0)
+        board2 = ClimbingBoard(board_type=eClimbBoard.MOONBOARD, is_adjustable=False, angle_of_incline=50.0)
         db.session.add(gym)
         gym.boards.append(board1)
         gym.boards.append(board2)

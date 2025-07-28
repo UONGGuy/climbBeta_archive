@@ -13,9 +13,11 @@ class ClimbingBoard(BaseModel):
     is_adjustable: Mapped[bool] = mapped_column(db.Boolean, nullable=False)
     angle_of_incline: Mapped[float] = mapped_column(db.Float, nullable=False)
 
-    def __init__(self, board_type: eClimbBoard, is_adjustable: bool, angle_of_incline: float):
+    def __init__(self, board_type: eClimbBoard, is_adjustable: bool, angle_of_incline: float, year: int=None, layout: str=None):
         super().__init__()
         self.board_type = board_type
         self.is_adjustable = is_adjustable
         self.angle_of_incline = angle_of_incline
+        self.year = year # mainly for MoonBoard
+        self.layout = layout # spray or mirror
         self.climbing_gyms = []
